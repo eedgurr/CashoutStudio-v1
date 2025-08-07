@@ -10,7 +10,10 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 from loguru import logger
 
-from ..ecu import ECUType, ECUConfig, ConnectionType
+try:
+    from .ecu import ECUType, ECUConfig, ConnectionType
+except ImportError:
+    from cashout_studio.ecu import ECUType, ECUConfig, ConnectionType
 
 
 @dataclass
